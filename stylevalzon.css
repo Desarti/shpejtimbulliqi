@@ -1,0 +1,129 @@
+#main {
+    display: flex;
+    margin-left: 20px;
+}
+
+#div1 {
+    margin-left: 100px;
+}
+
+#div1 h1 {
+    color: #202648;
+    size: 36px;
+    font-weight: 500;
+}
+
+#div1 p {
+    color: #737899;
+    size: 16px;
+    font-weight: 400;
+}
+
+#div2 {
+    margin-left: 130px;
+    display: flex;
+}
+
+/* 
+#div-buttons {
+    float: right;
+    margin-top: 30px;
+} */
+
+#button1 {
+    background-color: #C81F2A;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 8px;
+    padding-left: 32px;
+    padding-right: 32px;
+
+    font-family: Inter;
+    font-weight: 475;
+    font-style: Regular;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.26px;
+    vertical-align: middle;
+    border: none;
+}
+
+#button1 span {
+    margin-left: 8px;
+}
+
+#button2 {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 8px;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-left: 10px;
+
+    font-family: Inter;
+    font-weight: 475;
+    font-style: Regular;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.26px;
+    vertical-align: middle;
+    border: 1px solid;
+    border-color: rgba(206, 211, 231, 1);
+    box-shadow: 0px 1.5px 4px -1px #0A090B12;
+}
+
+#button2 span {
+    margin-left: 8px;
+}
+
+#button3 {
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    margin: 2px;
+    border: 1px solid;
+    border-color: rgba(206, 211, 231, 1);
+
+}
+
+#button3 span img {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+}
+
+#button4 {
+    background-color: #C81F2A;
+    border-radius: 50%;
+    margin: 2px;
+    border: none;
+}
+
+#button4 span img {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+}
+
+#div2 img {
+    height: 300px;
+    width: 300px;
+}
+
+#div2 #c1 {
+    background-color: #C81F2A;
+    width: 380;
+    height: 380;
+    opacity: 1;
+    border-radius: 36px;
+    margin: 10px;
+}
+
+#div2 #c2 {
+    background: rgba(245, 245, 245, 1);
+    width: 380;
+    height: 380;
+    opacity: 1;
+    border-radius: 36px;
+    margin: 10px;
+}
+
