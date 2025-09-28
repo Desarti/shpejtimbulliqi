@@ -8,7 +8,7 @@
 body {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-style: normal;  background: linear-gradient(to bottom, #F6F8FF, #CED3E7);
+  font-style: normal;
   color: #0D1B3D;
 }
 
@@ -68,7 +68,7 @@ header.scrolled {
   overflow: hidden;
 }
  
-.hero::before{
+/* .hero::before{
   content: "";
   position: absolute;
   top: 50px;
@@ -81,7 +81,7 @@ header.scrolled {
   width: 600px;
   height: 600px;
   z-index: 0;
-}
+} */
 
 .hero .content {
   position: relative;
