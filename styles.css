@@ -12,9 +12,12 @@ body {
     color: #333333;
     line-height: 1.6;
 }
-
+.info-card{
+    background: none !important;
+}
 .container {
-    max-width: 1200px;
+    background: linear-gradient(to bottom, #F6F8FF, #CED3E7);
+    max-width: 100%;
     margin: 0 auto;
     padding: 40px 20px;
 }
@@ -81,7 +84,7 @@ body {
 /* Card Header with Project Label */
 .card-header {
     padding: 20px 20px 15px 20px;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid #DBDBDB;
 }
 
 .project-label {

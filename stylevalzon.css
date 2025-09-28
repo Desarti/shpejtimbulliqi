@@ -167,6 +167,7 @@ body {
     margin: auto;
     align-items: center;
     place-items: center;
+    padding: 48px;
 }
 
 .footer_img {
@@ -208,6 +209,8 @@ hr {
     justify-content: space-between;
     margin-left: 120px;
     margin-right: 120px;
+    padding-top: 32px;
+    padding-bottom: 32px;
 }
 
 #second_footer img:first-child {
