@@ -60,29 +60,17 @@ header.scrolled {
 }
 
 
-.hero {
+section.hero {
+  height: 700px;
   position: relative;
   text-align: center;
   padding: 80px 20px 40px;
-  background: linear-gradient(to bottom, #F6F8FF, #CED3E7);
+  background: linear-gradient(to right, #F6F8FF, #CED3E7);
   overflow: hidden;
 }
- 
-/* .hero::before{
-  content: "";
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-image: url('images/Vector.svg');
-  background-repeat: no-repeat;
-  background-size: 600px;
-  opacity: 0.05;
-  width: 600px;
-  height: 600px;
-  z-index: 0;
-} */
-
+.content{
+  height: 100%;
+}
 .hero .content {
   position: relative;
   z-index: 1;
