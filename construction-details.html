@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detajet - Infrastruktura në Podujevë</title>
+    <link rel="stylesheet" href="details.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header-section">
+            <button class="back-btn" onclick="goBack()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"/>
+                </svg>
+                Kthehu
+            </button>
+            <div class="title-section">
+                <img src="Photo/infrastruktura.svg" alt="Logo" class="title-logo-above" />
+                <h1 class="main-title">Detajet e Mbështetjes për Infrastrukturën</h1>
+            </div>
+            <p class="intro-text">
+                Këtu mund të shihni detajet e plota të investimeve dhe mbështetjes që kemi dhënë për infrastrukturën në Podujevë.
+            </p>
+        </header>
+
+        <!-- Statistics List Section -->
+        <section class="statistics-section">
+            <div class="info-card">
+                <div class="card-header">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h2>Statistikat Kryesore</h2>
+                </div>
+                <div class="card-content">
+                    <ul class="info-list">
+                        <li>
+                            <span class="highlight">1</span>Rrugët janë asfaltuar mbi 150 km rrugë në qytet dhe fshatra; janë rikonstruktuar rrugët kryesore si “Skënderbeu”, “Xhemajl Mustafa” dhe “Hakif Zejnullahu” me investim rreth 4 milion €, 
+                            duke përfshirë shtegun për biçikleta dhe shtegun për persona të verbër.
+                        </li>
+                        <li>
+                            <span class="highlight">2</span>Arteria e re është në fazën finale një rrugë e re hyrëse–dalëse për qytetin, 
+                            që lehtëson komunikacionin nga rruga “Vëllezërit Frashëri” te magjistralja Podujevë–Prishtinë.
+                        </li>
+                        <li>
+                            <span class="highlight">3</span>Stacioni i Autobusëve është ndërtuar dhe funksionalizuar me vlerë 1.4 milion €.
+                        </li>
+                        <li>
+                            <span class="highlight">4</span>Ndriçimi publik është shtrirë për 250 km në qytet dhe fshatra.
+                        </li>
+                        <li>
+                            <span class="highlight">5</span>5.	Shërbimet publike – është themeluar ndërmarrja Eko
+                             Llapi, që mirëmban rrugët, parqet, lumenjtë dhe hapësirat publike.
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section class="gallery-section">
+            <div class="photo-gallery">
+                <h2>Galeria e Fotove</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="infrstrukutres/IMG_2440.PNG" alt="Infrastruktura në Podujevë - Foto 1" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="infrstrukutres/IMG_2441.JPG" alt="Infrastruktura në Podujevë - Foto 2" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="infrstrukutres/tregu render.jpg" alt="Infrastruktura në Podujevë - Foto 3" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="infrstrukutres/rruga punu.jpg" alt="Infrastruktura në Podujevë - Foto 4" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="infrstrukutres/ndriqim.jpg" alt="Infrastruktura në Podujevë - Foto 5" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="infrstrukutres/duke u asfalltuar.jpg" alt="Infrastruktura në Podujevë - Foto 6" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        
+        // Add smooth animations when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.info-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+    </script>
+</body>
+</html>

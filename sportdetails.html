@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detajet - Sporti në Podujevë</title>
+    <link rel="stylesheet" href="details.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header-section">
+            <button class="back-btn" onclick="goBack()">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20 11H7.83L13.42 5.41L12 4L4 12L12 20L13.41 18.59L7.83 13H20V11Z"/>
+                </svg>
+                Kthehu
+            </button>
+            <div class="title-section">
+                <img src="Photo/sport.svg" alt="Logo" class="title-logo-above" />
+                <h1 class="main-title">Detajet e Mbështetjes për Sportin</h1>
+            </div>
+            <p class="intro-text">
+                Këtu mund të shihni detajet e plota të investimeve dhe mbështetjes që kemi dhënë për sektorin sportiv në Podujevë.
+            </p>
+        </header>
+
+        <!-- Statistics List Section -->
+        <section class="statistics-section">
+            <div class="info-card">
+                <div class="card-header">
+                    <div class="icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h2>Statistikat Kryesore</h2>
+                </div>
+                <div class="card-content">
+                    <ul class="info-list">
+                        <li>
+                            <span class="highlight">1</span>Premtuam 2 milionë € subvencione, por e kemi tejkaluar këtë zotim 
+                            duke dyfishuar fondet dhe duke u ofruar fermerëve përkrahje më të madhe se kurrë më parë.
+                        </li>
+                        <li>
+                            <span class="highlight">2</span>2.	Fermerët tanë janë mbështetur me mekanizëm bujqësor, 
+                            fara, plehra dhe inpute tjera, duke rritur prodhimtarinë dhe cilësinë e produkteve.e
+                        </li>
+                        <li>
+                            <span class="highlight">3</span>3.	Kemi fuqizuar familjet bujqësore, kemi zhvilluar agrobizneset dhe kemi 
+                            rritur konkurrueshmërinë e produkteve të Podujevës në tregjet vendore dhe rajonale.
+                        </li>
+                        <li>
+                            <span class="highlight">4</span>4.	Kemi treguar se bujqësia nuk është vetëm mbijetesë, 
+                            por një sektor që sjell të ardhura, punësim dhe perspektivë për qytetarët tanë.
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section class="gallery-section">
+            <div class="photo-gallery">
+                <h2>Galeria e Fotove</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="Photo/gallery1.jpg" alt="Sporti në Podujevë - Foto 1" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Photo/gallery2.jpg" alt="Sporti në Podujevë - Foto 2" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Photo/gallery3.jpg" alt="Sporti në Podujevë - Foto 3" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Photo/gallery4.jpg" alt="Sporti në Podujevë - Foto 4" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Photo/gallery5.jpg" alt="Sporti në Podujevë - Foto 5" />
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Photo/gallery6.jpg" alt="Sporti në Podujevë - Foto 6" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+        
+        // Add smooth animations when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            const cards = document.querySelectorAll('.info-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        });
+    </script>
+</body>
+</html>
