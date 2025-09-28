@@ -1,0 +1,115 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;  background: linear-gradient(to bottom, #F6F8FF, #CED3E7);
+  color: #0D1B3D;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: white;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav li {
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.nav li.active {
+  font-weight: bold;
+  border-bottom: 2px solid #0D1B3D;
+}
+
+.heart-icon img {
+  height: 30px;
+}
+
+
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 80px 20px 40px;
+  background: linear-gradient(to bottom, #F6F8FF, #CED3E7);
+  overflow: hidden;
+}
+ 
+.hero::before{
+  /* content: ""; */
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  /* transform: translateX(-50%); */
+  background-image: url('images/Vector.svg');
+  background-repeat: no-repeat;
+  background-size: 600px;
+  opacity: 0.05;
+  width: 600px;
+  height: 600px;
+  z-index: 0;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero .content h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.hero .content p {
+  font-size: 16px;
+  color: #444;
+}
+
+.graphics {
+  position: relative;
+  margin-top: 40px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vote-box {
+  position: absolute;
+  left: 25%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  z-index: 2;
+}
+
+.candidate {
+  width: 587px;
+  height: 587px;
+  z-index: 3;
+  
+}
