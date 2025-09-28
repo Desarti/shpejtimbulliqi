@@ -29,7 +29,7 @@
   </header>
 
   <section class="hero">
-    <div class="content">
+    <div class="content" style="margin-top: 50px">
       <h1>Punë të kryera dhe vizion i qartë për Podujevën.</h1>
       <p>Zhvillim në çdo sektor dhe vizion i qartë për të ardhmen e Podujevës.</p>
     </div>
@@ -38,6 +38,23 @@
       <img class="candidate" src="images/Shpejtimi 2.png" alt="Shpejtim Bulliqi">
     </div>
   </section>
+
+
+
+
+
+
+  <script>
+    window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (window.scrollY > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
+
+  </script>
 
 
     
