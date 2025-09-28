@@ -1,22 +1,45 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+}
+
 #main {
     display: flex;
     margin-left: 20px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    background-color: #FFFFFF;
+}
+
+#rectangle{
+    width: 50px;
+    height: 50px;
+    margin: 0px;
 }
 
 #div1 {
     margin-left: 100px;
+    margin-top: 50px;
 }
 
 #div1 h1 {
     color: #202648;
-    size: 36px;
+    font-size: 36px;
     font-weight: 500;
 }
 
 #div1 p {
     color: #737899;
-    size: 16px;
+    font-size: 1rem;
     font-weight: 400;
+}
+
+#div1 a {
+    text-decoration: none;
+}
+
+#div1 a:last-child {
+    margin-left: 10px;
 }
 
 #div2 {
@@ -24,28 +47,25 @@
     display: flex;
 }
 
-/* 
-#div-buttons {
-    float: right;
-    margin-top: 30px;
-} */
-
 #button1 {
     background-color: #C81F2A;
     color: #FFFFFF;
-    border-radius: 8px;
-    padding: 8px;
-    padding-left: 32px;
-    padding-right: 32px;
-
-    font-family: Inter;
-    font-weight: 475;
-    font-style: Regular;
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: -0.26px;
-    vertical-align: middle;
     border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease, transform 0.2s ease;
+    width: fit-content;
+    justify-content: center;
+}
+
+#button1:hover {
+    background-color: #F02E3B;
+    transform: translateY(-2px);
 }
 
 #button1 span {
@@ -53,23 +73,25 @@
 }
 
 #button2 {
-    background-color: #FFFFFF;
+    background-color: white;
+    color: #1a365d;
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
-    padding: 8px;
-    padding-left: 32px;
-    padding-right: 32px;
-    margin-left: 10px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease, transform 0.2s ease;
+    width: fit-content;
+    justify-content: center;
+}
 
-    font-family: Inter;
-    font-weight: 475;
-    font-style: Regular;
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: -0.26px;
-    vertical-align: middle;
-    border: 1px solid;
-    border-color: rgba(206, 211, 231, 1);
-    box-shadow: 0px 1.5px 4px -1px #0A090B12;
+#button2:hover {
+    background-color: #f7fafc;
+    border-color: #cbd5e0;
+    transform: translateY(-2px);
 }
 
 #button2 span {
@@ -126,4 +148,3 @@
     border-radius: 36px;
     margin: 10px;
 }
-
