@@ -1,77 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="sq">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylevalzon.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="resvalzon.css">
-    <title>Document</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shpejtim Bulliqi 105</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
-
 <body>
-
-    <div id="main">
-        <div id="div1">
-            <img id="rectangle" src="filesvalzon/Rectangle.png" alt="">
-            <h1>Nga rezultatet tek vizioni <br> për të ardhmen</h1>
-            <p>Kryetari Prof. Dr. Shpejtim Bulliqi paraqet punët e kryera gjatë <br> mandatit 2021-2025 dhe planin
-                qeverisës 2026-2030 për <br> zhvillimin e Podujevës.</p>
-            <a href="filesvalzon/4_vjet_shb_web.pdf" target="_blank"><button id="button1">Plani Qeverisjes 2026-2030
-                    <span><img src="filesvalzon/Button1.svg" alt=""></span></button></a>
-            <a href="filesvalzon/programi2025.pdf" target="_blank"><button id="button2">Projektet 2021-2025 <span><img
-                            src="filesvalzon/Button2.svg" alt=""></span></button></a>
-        </div>
-        <div id="div2">
-            <a href="filesvalzon/4_vjet_shb_web.pdf" target="_blank">
-                <p id="c1"><img src="filesvalzon/c1.png" alt=""></p>
-            </a>
-            <a href="filesvalzon/programi2025.pdf" target="_blank">
-                <p id="c2"><img src="filesvalzon/c2.png" alt=""></p>
-            </a>
-        </div>
+  <header class="header">
+    <div class="logo"> 
+      <img src="images/logo.svg" alt="Shpejtim Bulliqi 105 Logo">
     </div>
 
+    <!-- Desktop Navigation -->
+    <nav class="nav">
+      <ul>
+        <li class="active">105</li>
+        <li>Plani Qeverisës</li>
+        <li>Projektet</li>
+        <li>Një mandat</li>
+      </ul>
+    </nav>
 
+    <div class="heart-icon">
+      <img src="images/heart.svg" alt="Heart Logo">
+    </div>
 
+    <!-- Mobile Hamburger -->
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+  </header>
 
+  <!-- Mobile Menu Overlay -->
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobile-menu">
+  <div class="close-btn" id="close-btn">✕</div>
+  
+  <!-- Logo inside mobile menu -->
+  <div class="logo" >
+    <img src="images/logo.svg" alt="Shpejtim Bulliqi 105 Logo" >
+  </div>
 
+  <ul>
+    <li class="active">105</li>
+    <li>Plani Qeverisës</li>
+    <li>Projektet</li>
+    <li>Një mandat</li>
+  </ul>
+  <div class="heart-icon-mobile">
+    <img src="images/heart.svg" alt="Heart Logo">
+  </div>
+</div>
 
-    <footer>
-        <div id="div_footer">
-            <img id="footer_logo" src="filesvalzon/logo.png" alt="Fotoja nuk mund te hapet">
+  <section class="hero">
+    <div class="content" style="margin-top: 50px">
+      <h1>Punë të kryera dhe vizion i qartë për Podujevën.</h1>
+      <p>Zhvillim në çdo sektor dhe vizion i qartë për të ardhmen e Podujevës.</p>
+    </div>
+    <img src="images/Frame.png" alt="Candidate Image"class="frameclass">
+  </section>
 
-            <h6 id="h6footer">Punë të kryera dhe vizion i qartë për Podujevën.</h6><br>
-            <div class="footer_img">
-                <a href="https://www.facebook.com/shpejtimbulliqi144" target="_blank"><img src="filesvalzon/facebook.svg" alt="Fotoja nuk mund te hapet"></a>
-                <a href="https://www.instagram.com/shpejtim.bulliqi" target="_blank"><img src="filesvalzon/instagram.svg" alt="Fotoja nuk mund te hapet"></a>
-                <a href="https://www.tiktok.com/@shpejtim.bulliqi" target="_blank"><img src="filesvalzon/tiktok.svg" alt="Fotoja nuk mund te hapet"></a>
-            </div>
-        </div>
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
 
-        <hr>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-btn');
 
-        <div id="second_footer">
-        <img src="filesvalzon/v105.png" alt="">
-        <img id="reslogofooter" src="filesvalzon/reslogofooter.png" alt="Fotoja nuk mund te hapet">
-        <h6 id="rights">© 2025 Shpejtim Bulliqi - All rights reserved</h6>
-        <img src="filesvalzon/bashk.png" alt="">
-        </div>
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.add('active');
+    });
 
-    </footer>
-
-
-
-
-
-
-
+    closeBtn.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+    });
+  </script>
 </body>
-
 </html>
