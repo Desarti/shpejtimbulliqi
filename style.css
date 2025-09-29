@@ -6,6 +6,7 @@
 
 body {
   font-family: "Inter", sans-serif;
+  background: linear-gradient(to bottom, #F6F8FF, #CED3E7);
   color: #0D1B3D;
 }
 
@@ -18,7 +19,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px !important;
+  padding: 20px 40px;
   background-color: rgba(255, 255, 255, 1);
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
@@ -26,11 +27,8 @@ header {
 header.scrolled {
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
-  
 }
-header.scrolled.logo{
-  padding-top: 20px !important;
-}
+
 .logo img {
   height: 40px;
 }
@@ -71,7 +69,7 @@ header.scrolled.logo{
   top: 0;
   right: -100%;
   width: 100%;
-  height: 50%;
+  height: 400px;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   z-index: 2000;
@@ -135,18 +133,20 @@ header.scrolled.logo{
     display: block;
   }
   .frameclass{
-    width: 393px;
-    height: 461px;
-  }
+  width: 100%;
+  height: 100%;
+}
 }
 
 .hero {
-  position: relative;
   text-align: center;
   padding: 80px 20px 40px;
   background: linear-gradient(to bottom, #F6F8FF, #CED3E7);
   overflow: hidden;
+  /* padding-bottom: 0px !important; */
+  /* height: 779px; */
 }
+
 .hero .content {
   position: relative;
   z-index: 1;

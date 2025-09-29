@@ -1,10 +1,6 @@
-@media only screen 
-and (min-device-width : 1220px) 
-and (max-device-width : 1920px){
-
 body {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
 }
 
 #main {
@@ -15,13 +11,14 @@ body {
     background-color: #FFFFFF;
 }
 
-#rectangle {
+#rectangle{
     width: 50px;
     height: 50px;
+    margin: 0px;
 }
 
 #div1 {
-    margin-left: 100px;
+    margin-left: 80px;
     margin-top: 50px;
 }
 
@@ -29,8 +26,6 @@ body {
     color: #202648;
     font-size: 36px;
     font-weight: 500;
-    margin-top: 0px;
-    margin-bottom: 5px;
 }
 
 #div1 p {
@@ -134,7 +129,6 @@ body {
 #div2 img {
     height: 300px;
     width: 300px;
-    margin-top: 20px;
 }
 
 #div2 #c1 {
@@ -153,84 +147,4 @@ body {
     opacity: 1;
     border-radius: 36px;
     margin: 10px;
-}
-
-#footer_logo {
-    display: block;
-    margin: auto;
-    width: 125px;
-    height: 40px;
-}
-
-#div_footer {
-    display: block;
-    margin: auto;
-    align-items: center;
-    place-items: center;
-    padding: 48px;
-}
-
-.footer_img {
-    align-items: center;
-    place-content: center;
-    place-items: center;
-    word-spacing: 24px;
-}
-
-.footer_img img {
-    height: 16px;
-    width: 16px;
-    margin-bottom: 50px;
-}
-
-#h6footer {
-    color: #737899;
-    font-family: Inter;
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 1rem;
-    line-height: 20px;
-    letter-spacing: -0.05px;
-    vertical-align: middle;
-    margin-top: 60px;
-
-}
-
-hr {
-    border: none;
-    height: 1px;
-    background-color: #E6E6E6;
-}
-
-#second_footer {
-    display: flex;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin-left: 120px;
-    margin-right: 120px;
-    padding-top: 32px;
-    padding-bottom: 32px;
-}
-
-#second_footer img:first-child {
-    width: 40px;
-    height: 55px;
-}
-
-#second_footer img:last-child {
-    width: 100px;
-    height: 50px;
-}
-
-#rights {
-    color: #737899;
-    font-weight: 400;
-    font-style: Regular;
-    font-size: 14px;
-    line-height: 20px;
-    letter-spacing: -0.05px;
-    vertical-align: middle;
-    margin-left: 30px;
-}
 }

@@ -23,6 +23,7 @@
       <img src="images/logo.svg" alt="Shpejtim Bulliqi 105 Logo">
     </div>
 
+    <!-- Desktop Navigation -->
     <nav class="nav">
       <ul>
         <li class="active">105</li>
@@ -36,14 +37,18 @@
       <img src="images/heart.svg" alt="Heart Logo">
     </div>
 
+    <!-- Mobile Hamburger -->
     <div class="menu-toggle" id="menu-toggle">
       ☰
     </div>
   </header>
 
+  <!-- Mobile Menu Overlay -->
+<!-- Mobile Menu Overlay -->
 <div class="mobile-menu" id="mobile-menu">
   <div class="close-btn" id="close-btn">✕</div>
   
+  <!-- Logo inside mobile menu -->
   <div class="logo" >
     <img src="images/logo.svg" alt="Shpejtim Bulliqi 105 Logo" >
   </div>
@@ -68,7 +73,7 @@
   </section>
 
   <script>
-
+    // Header scroll effect
     window.addEventListener('scroll', () => {
       const header = document.querySelector('header');
       if (window.scrollY > 10) {
@@ -78,6 +83,7 @@
       }
     });
 
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
     const closeBtn = document.getElementById('close-btn');
@@ -94,12 +100,14 @@
         <div id="div1">
             <img id="rectangle" src="filesvalzon/Rectangle.png" alt="">
             <h1>Nga rezultatet tek vizioni <br> për të ardhmen</h1>
-            <p>Kryetari Prof. Dr. Shpejtim Bulliqi paraqet punët e kryera gjatë <br> mandatit 2021-2025 dhe planin
+            <p style="margin-top: 16px;">Kryetari Prof. Dr. Shpejtim Bulliqi paraqet punët e kryera gjatë <br> mandatit 2021-2025 dhe planin
                 qeverisës 2026-2030 për <br> zhvillimin e Podujevës.</p>
+                <div class="buttonat" style="display: flex  ; margin-top:26px; ">
             <a href="filesvalzon/4_vjet_shb_web.pdf" target="_blank"><button id="button1">Plani Qeverisjes 2026-2030
                     <span><img src="filesvalzon/Button1.svg" alt=""></span></button></a>
             <a href="filesvalzon/programi2025.pdf" target="_blank"><button id="button2">Projektet 2021-2025 <span><img
                             src="filesvalzon/Button2.svg" alt=""></span></button></a>
+                            </div>
         </div>
         <div id="div2">
             <a href="filesvalzon/4_vjet_shb_web.pdf" target="_blank">
