@@ -5,6 +5,246 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detajet - Ambienti në Podujevë</title>
     <link rel="stylesheet" href="details.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: transparent;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 0;
+            width: 90%;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: none;
+            animation: slideIn 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-header {
+            background: transparent;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .close {
+            position: relative;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.7);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .close:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+            transform: scale(1.1);
+        }
+
+        .modal-body {
+            padding: 0;
+            background: transparent;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: imageZoom 0.4s ease;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes imageZoom {
+            from { 
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to { 
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Make gallery images clickable */
+        .gallery-item img {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        /* Responsive Modal */
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            .modal-header {
+                top: 15px;
+                right: 15px;
+                position: absolute;
+            }
+
+            .close {
+                font-size: 28px;
+                width: 36px;
+                height: 36px;
+            }
+
+            .modal-body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                min-height: calc(100vh - 30px);
+            }
+
+            .modal-image {
+                max-width: 96vw;
+                max-height: 85vh;
+                border-radius: 6px;
+                margin: auto;
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-content {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            .modal-header {
+                top: 10px;
+                right: 10px;
+                position: absolute;
+            }
+
+            .close {
+                font-size: 24px;
+                width: 32px;
+                height: 32px;
+            }
+
+            .modal-body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                min-height: calc(100vh - 20px);
+            }
+
+            .modal-image {
+                max-width: 98vw;
+                max-height: 90vh;
+                border-radius: 4px;
+                margin: auto;
+                display: block;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .modal-content {
+                padding: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            .modal-header {
+                top: 8px;
+                right: 8px;
+                position: absolute;
+            }
+
+            .close {
+                font-size: 22px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .modal-body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                min-height: calc(100vh - 16px);
+            }
+
+            .modal-image {
+                max-width: 99vw;
+                max-height: 95vh;
+                border-radius: 3px;
+                margin: auto;
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -39,20 +279,25 @@
                 <div class="card-content">
                     <ul class="info-list">
                         <li>
-                            <span class="highlight">1</span>Premtuam 2 milionë € subvencione, por e kemi tejkaluar këtë zotim 
-                            duke dyfishuar fondet dhe duke u ofruar fermerëve përkrahje më të madhe se kurrë më parë.
+                            <span class="highlight">1</span>Menaxhimi i mbeturinave është themeluar ndërmarrja publike Eko Llapi, e cila merret me pastrimin e parqeve, lumenjve, 
+                            varrezave dhe hapësirave publike me efikasitet më të lartë e kosto më të ulët..
                         </li>
                         <li>
-                            <span class="highlight">2</span>2.	Fermerët tanë janë mbështetur me mekanizëm bujqësor, 
-                            fara, plehra dhe inpute tjera, duke rritur prodhimtarinë dhe cilësinë e produkteve.e
+                            <span class="highlight">2</span>Parket dhe gjelbërimi – janë rregulluar në tërësi Parku i Paqes dhe 
+                            Parku Manchester në Podujevë, duke krijuar hapësira rekreative të sigurta për qytetarët.
                         </li>
                         <li>
-                            <span class="highlight">3</span>3.	Kemi fuqizuar familjet bujqësore, kemi zhvilluar agrobizneset dhe kemi 
-                            rritur konkurrueshmërinë e produkteve të Podujevës në tregjet vendore dhe rajonale.
+                            <span class="highlight">3</span>Ndriçimi publik – është shtrirë rrjeti i 
+                            ndriçimit për 250 km në qytet dhe fshatra, duke rritur sigurinë dhe cilësinë e jetës urbane.
                         </li>
                         <li>
-                            <span class="highlight">4</span>4.	Kemi treguar se bujqësia nuk është vetëm mbijetesë, 
-                            por një sektor që sjell të ardhura, punësim dhe perspektivë për qytetarët tanë.
+                            <span class="highlight">4</span>Projekte madhore mjedisore kanë filluar 
+                            punimet për kolektorin e ujërave të zeza (rreth 15 km, vlerë 3 milion €) dhe është nënshkruar marrëveshja 
+                            për impiantin e ujërave të zeza (35 milion €) në bashkëpunim me BERZH dhe Ministrinë e Ekonomisë.
+                        </li>
+                        <li>
+                            <span class="highlight">5</span>Liqeni i Pollatës – është kryer fizibiliteti dhe projekti për ndërtimin e liqenit akumulues, investim mbi 60 milion €, 
+                            që do ta zgjidhë përfundimisht çështjen e furnizimit me ujë të pijshëm për Podujevën dhe rajonin.
                         </li>
                         
                     </ul>
@@ -66,22 +311,22 @@
                 <h2>Galeria e Fotove</h2>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="Photo/gallery1.jpg" alt="Mjedisi në Podujevë - Foto 1" />
+                        <img src="ambient/526983689_1376148184515831_3013769173688156239_n.jpg" alt="Mjedisi në Podujevë - Foto 1" />
                     </div>
                     <div class="gallery-item">
-                        <img src="Photo/gallery2.jpg" alt="Mjedisi në Podujevë - Foto 2" />
+                        <img src="ambient/batllave.jpg" alt="Mjedisi në Podujevë - Foto 2" />
                     </div>
                     <div class="gallery-item">
-                        <img src="Photo/gallery3.jpg" alt="Mjedisi në Podujevë - Foto 3" />
+                        <img src="ambient/ekollapi.jpg" alt="Mjedisi në Podujevë - Foto 3" />
                     </div>
                     <div class="gallery-item">
-                        <img src="Photo/gallery4.jpg" alt="Mjedisi në Podujevë - Foto 4" />
+                        <img src="ambient/IMG_2554.JPG" alt="Mjedisi në Podujevë - Foto 4" />
                     </div>
                     <div class="gallery-item">
-                        <img src="Photo/gallery5.jpg" alt="Mjedisi në Podujevë - Foto 5" />
+                        <img src="ambient/IMG_2555.JPG" alt="Mjedisi në Podujevë - Foto 5" />
                     </div>
                     <div class="gallery-item">
-                        <img src="Photo/gallery6.jpg" alt="Mjedisi në Podujevë - Foto 6" />
+                        <img src="ambient/ambient12.jpg" alt="Mjedisi në Podujevë - Foto 6" />
                     </div>
                 </div>
             </div>
@@ -91,10 +336,64 @@
         
     </div>
 
+    <!-- Modal for Photo Details -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" class="modal-image" src="" alt="">
+            </div>
+        </div>
+    </div>
+
     <script>
         function goBack() {
             window.history.back();
         }
+        
+        // Modal functionality
+        const modal = document.getElementById('photoModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.close');
+
+        // Add click event listeners to all gallery images
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', function() {
+                const imageSrc = this.src;
+                
+                // Set image source
+                modalImage.src = imageSrc;
+                modalImage.alt = this.alt;
+
+                // Show modal
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close modal functionality
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
         
         // Add smooth animations when page loads
         document.addEventListener('DOMContentLoaded', () => {

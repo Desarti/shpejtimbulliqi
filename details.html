@@ -5,6 +5,287 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detajet - Bujqësia në Podujevë</title>
     <link rel="stylesheet" href="details.css">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: transparent;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 0;
+            width: 100%;
+            max-width: 100vw;
+            max-height: 100vh;
+            overflow: hidden;
+            box-shadow: none;
+            animation: slideIn 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .modal-header {
+            background: transparent;
+            padding: 0;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: auto;
+            height: auto;
+            display: flex;
+            justify-content: flex-end;
+            z-index: 1001;
+        }
+
+        .close {
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .close:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .modal-body {
+            padding: 0;
+            background: transparent;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image {
+            width: auto;
+            height: auto;
+            max-width: 95vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: imageZoom 0.4s ease;
+        }
+
+        .modal-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #555;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .modal-features {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-features h3 {
+            color: #E53935;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .modal-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+
+        .modal-features li:last-child {
+            border-bottom: none;
+        }
+
+        .modal-features li::before {
+            content: "✓";
+            color: #E53935;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Make gallery images clickable */
+        .gallery-item img {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        /* Responsive Modal */
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            .modal-header {
+                top: 15px;
+                right: 15px;
+                position: absolute;
+            }
+
+            .close {
+                font-size: 28px;
+                width: 36px;
+                height: 36px;
+            }
+
+            .modal-body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                min-height: calc(100vh - 30px);
+            }
+
+            .modal-image {
+                max-width: 96vw;
+                max-height: 85vh;
+                border-radius: 6px;
+                margin: auto;
+                display: block;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .modal-content {
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            .modal-header {
+                top: 10px;
+                right: 10px;
+                position: absolute;
+            }
+
+            .close {
+                font-size: 24px;
+                width: 32px;
+                height: 32px;
+            }
+
+            .modal-body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                min-height: calc(100vh - 20px);
+            }
+
+            .modal-image {
+                max-width: 98vw;
+                max-height: 90vh;
+                border-radius: 4px;
+                margin: auto;
+                display: block;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .modal-content {
+                padding: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+            .modal-header {
+                top: 8px;
+                right: 8px;
+                position: absolute;
+            }
+
+            .close {
+                font-size: 22px;
+                width: 30px;
+                height: 30px;
+            }
+
+            .modal-body {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                min-height: calc(100vh - 16px);
+            }
+
+            .modal-image {
+                max-width: 99vw;
+                max-height: 95vh;
+                border-radius: 3px;
+                margin: auto;
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -90,10 +371,134 @@
 
     </div>
 
+    <!-- Modal for Photo Details -->
+    <div id="photoModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" class="modal-image" src="" alt="">
+            </div>
+        </div>
+    </div>
+
     <script>
         function goBack() {
             window.history.back();
         }
+        
+        // Photo details data
+        const photoDetails = {
+            'bujqesi kultivator.jpg': {
+                title: 'Kultivatorët Bujqësorë',
+                text: 'Këta kultivatorë të vegjël me motorë të kuq janë pajisje moderne për punimet bujqësore. Ato janë ideale për fermerët e vegjël dhe të mesëm që duan të modernizojnë mënyrën e punës së tyre në arë.',
+                features: [
+                    'Motorë të fuqishëm për punë të rregullt',
+                    'Blades të mprehta për kultivim efektiv',
+                    'Madhësi kompakte për ferme të vogla',
+                    'Kosto efektive për investime të arsyeshme',
+                    'E lehtë për t\'u përdorur dhe mirëmbajtur'
+                ]
+            },
+            'mjet bujqesor per sperkatje te arave.jpg': {
+                title: 'Pajisje për Spërkatjen e Arave',
+                text: 'Këto pajisje të verdha janë mikserë betoni dhe pajisje industriale që tregojnë diversifikimin e investimeve në sektorin bujqësor dhe ndërtimor. Ato përfaqësojnë modernizimin e infrastrukturës rurale.',
+                features: [
+                    'Kapacitet të madh për prodhim',
+                    'Teknologji moderne dhe e besueshme',
+                    'Përshtatshme për projekte të mëdha',
+                    'Kontribojnë në zhvillimin e infrastrukturës',
+                    'Krijojnë vende pune të reja'
+                ]
+            },
+            'traktori.jpg': {
+                title: 'Traktorët e Rinj për Fermerët',
+                text: 'Traktori i kuq me kabinë të plotë është një nga investimet më të rëndësishme për fermerët e Podujevës. Ky traktor modern ofron fuqi, komfort dhe efikasitet në punimet bujqësore.',
+                features: [
+                    'Motor i fuqishëm për punë të rënda',
+                    'Kabinë e rehatshme për operatorin',
+                    'Goma të mëdha për traktim të mirë',
+                    'Pajisje moderne për siguri',
+                    'Garancion dhe mbështetje teknike'
+                ]
+            },
+            'makine egg.jpg': {
+                title: 'Teknologjia e Procesimit të Vezëve',
+                text: 'Makina automatike për procesimin e vezëve është një shembull i shkëlqyer i modernizimit të sektorit të blegtorisë. Kjo teknologji përmirëson cilësinë dhe sigurinë e produkteve të blegtorisë.',
+                features: [
+                    'Procesim automatik i vezëve',
+                    'Printimi i informacioneve në vezë',
+                    'Kontroll i saktë i cilësisë',
+                    'Hygienë maksimale në procesim',
+                    'Efikasitet i lartë në prodhim'
+                ]
+            },
+            'makin per qumsht.jpg': {
+                title: 'Pajisje për Mbledhjen e Qumështit',
+                text: 'Këto pajisje portative për mbledhjen e qumështit janë teknologji moderne që ndihmon blegtori të rrisin prodhimin dhe cilësinë e qumështit. Ato janë të lehta për t\'u përdorur dhe mirëmbajtur.',
+                features: [
+                    'Sistem i pastër për mbledhjen e qumështit',
+                    'Tankë transparente për kontroll vizual',
+                    'Pajisje portative për lëvizje të lehtë',
+                    'Kuptime të shumta për efikasitet',
+                    'Materiale cilësore për qëndrueshmëri'
+                ]
+            },
+            '111.jpg': {
+                title: 'Ekspozita e Pajisjeve Bujqësore',
+                text: 'Kjo skenë tregon një ekspozitë apo treg të pajisjeve bujqësore ku fermerët mund të shohin dhe testojnë pajisje të reja. Kjo është një mundësi e shkëlqyer për të mësuar teknologji të reja dhe për të blerë pajisje të përshtatshme.',
+                features: [
+                    'Ekspozitë e pajisjeve të reja',
+                    'Mundësi për testim dhe krahasim',
+                    'Konsulencë profesionale për blerje',
+                    'Tregtimi direkt me prodhuesit',
+                    'Mbështetje për zhvillimin e fermave'
+                ]
+            }
+        };
+        
+        // Modal functionality
+        const modal = document.getElementById('photoModal');
+        const modalImage = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.close');
+
+        // Add click event listeners to all gallery images
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', function() {
+                const imageSrc = this.src;
+                
+                // Set image source
+                modalImage.src = imageSrc;
+                modalImage.alt = this.alt;
+
+                // Show modal
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close modal functionality
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && modal.style.display === 'block') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
         
         // Add smooth animations when page loads
         document.addEventListener('DOMContentLoaded', () => {
