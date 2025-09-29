@@ -147,7 +147,7 @@ header.scrolled {
  
 .hero {
   text-align: center;
-  /* padding: 80px 20px 40px; */
+  padding-top: 80px;
   background: linear-gradient(to bottom, #F6F8FF, #CED3E7);
   /* overflow: hidden; */
   max-height: 835px;
