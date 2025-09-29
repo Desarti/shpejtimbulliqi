@@ -11,9 +11,12 @@ body {
     display: block;
     /* margin-left: 20px; */
     /* margin-right: 20px; */
-    margin-top: 50px;
+    /* margin-top: 50px; */
     margin-bottom: 50px;
     background-color: #FFFFFF;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10px;
 }
 
 #rectangle {
