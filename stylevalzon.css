@@ -163,6 +163,7 @@ body {
 }
 
 #div_footer {
+    background-color: white;
     display: block;
     margin: auto;
     align-items: center;
@@ -203,14 +204,16 @@ hr {
 }
 
 #second_footer {
-    display: flex;
+     background-color: white;
+    display: block;
     align-items: center;
     display: flex;
     justify-content: space-between;
     margin-left: 120px;
-    margin-right: 120px;
+    /* margin-right: 120px; */
     padding-top: 32px;
     padding-bottom: 32px;
+    /* gap: 35px; */
 }
 
 #second_footer img:first-child {
