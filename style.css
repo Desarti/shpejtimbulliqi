@@ -162,6 +162,8 @@ a{
   z-index: 1;
   max-width: 800px;
   margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .hero .content h1 {
